@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A focused job board for Kathmandu Valley careers.">
+  <title>Jobs | Kathmandu careers, clearly found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="features.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Jobs home">
+        <span class="brand-mark">S</span>
+        <span>.........<span class="brand-dot">.</span>jobs</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="active" href="#jobs">Find jobs</a>
+        <a href="#companies">Companies</a>
+        <a href="#resources">Career notes</a>
+      </nav>
+      <div class="header-actions">
+        <button class="saved-link" id="savedToggle" type="button"><span class="bookmark-icon">☆</span> Saved <span class="saved-count" id="savedCount">0</span></button>
+        <button class="utility-button" id="alertsButton" type="button"><span>◔</span> Alerts</button>
+        <button class="account-button" id="accountButton" type="button">Sign in</button>
+        <button class="post-button" type="button" id="postJobButton">Post a job <span>↗</span></button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Kathmandu Valley's job board</p>
+          <h1 id="hero-title">Find work that<br><em>moves</em> you forward.</h1>
+          <p class="hero-description">A calmer way to discover meaningful work across Kathmandu, Lalitpur and Bhaktapur.</p>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="peak peak-one"></div>
+          <div class="peak peak-two"></div>
+          <div class="peak peak-three"></div>
+          <span class="orbit-label">ktm / 27.7172° N</span>
+        </div>
+        <form class="search-panel" id="searchForm">
+          <label class="search-field search-keyword"><span class="field-icon">⌕</span><span class="visually-hidden">Search roles or companies</span><input id="keywordInput" type="search" placeholder="Role, skill or company" autocomplete="off"></label>
+          <label class="search-field"><span class="field-icon">⌖</span><span class="visually-hidden">Choose a location</span><select id="locationSelect"><option value="">All Kathmandu Valley</option><option value="Kathmandu">Kathmandu</option><option value="Lalitpur">Lalitpur</option><option value="Bhaktapur">Bhaktapur</option><option value="Remote">Remote</option></select></label>
+          <button class="search-button" type="submit">Search jobs <span>→</span></button>
+        </form>
+      </section>
+
+      <section class="content-section" id="jobs" aria-labelledby="jobs-title">
+        <div class="section-heading">
+          <div><p class="eyebrow muted">Fresh opportunities</p><h2 id="jobs-title">Roles worth your attention</h2></div>
+          <div class="result-meta"><span id="resultCount">0</span> roles <span class="meta-divider">/</span> <span id="refreshStatus">Loading listings...</span> <button class="refresh-button" id="refreshButton" type="button" aria-label="Refresh job listings" title="Refresh job listings">↻</button></div>
+        </div>
+        <div class="toolbar">
+          <div class="filter-pills" role="group" aria-label="Filter by category">
+            <button class="filter-pill active" data-category="All" type="button">All roles</button>
+            <button class="filter-pill" data-category="Technology" type="button">Technology</button>
+            <button class="filter-pill" data-category="Design" type="button">Design</button>
+            <button class="filter-pill" data-category="Marketing" type="button">Marketing</button>
+            <button class="filter-pill" data-category="Operations" type="button">Operations</button>
+            <button class="filter-pill" data-category="Finance" type="button">Finance</button>
+            <button class="filter-pill" data-category="Sales" type="button">Sales</button>
+            <button class="filter-pill" data-category="Healthcare" type="button">Healthcare</button>
+            <button class="filter-pill" data-category="Education" type="button">Education</button>
+            <button class="filter-pill" data-category="Customer Support" type="button">Customer support</button>
+            <button class="filter-pill" data-category="Human Resources" type="button">Human resources</button>
+            <button class="filter-pill" data-category="Hospitality" type="button">Hospitality</button>
+            <button class="filter-pill" data-category="Engineering" type="button">Engineering</button>
+            <button class="filter-pill" data-category="NGO & Development" type="button">NGO & development</button>
+          </div>
+          <div class="toolbar-actions"><button class="match-button" id="matchButton" type="button">✦ Match me</button><label class="sort-control"><span>Sort by</span><select id="sortSelect"><option value="recent">Most recent</option><option value="salary">Highest salary</option><option value="match">Best match</option></select></label></div>
+        </div>
+        <div class="jobs-layout">
+          <div class="jobs-list" id="jobsList" aria-live="polite"></div>
+          <aside class="side-note" id="companies">
+            <div class="note-number">01</div>
+            <p class="eyebrow muted">Why Seto?</p>
+            <h3>Good work should be easier to find.</h3>
+            <p>We bring the Valley's best opportunities into one considered, useful place. No noise. No maze of tabs.</p>
+            <a href="#resources" class="text-link">Explore career notes <span>↗</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="companies-band" aria-labelledby="companies-title">
+        <div class="companies-intro"><p class="eyebrow muted">Teams hiring now</p><h2 id="companies-title">Build your next<br><em>chapter</em> here.</h2></div>
+        <div class="company-grid"><div class="company-name">CloudFactory <span>↗</span></div><div class="company-name">LogPoint <span>↗</span></div><div class="company-name">Fusemachines <span>↗</span></div><div class="company-name">Khalti <span>↗</span></div></div>
+      </section>
+    </main>
+
+    <footer id="resources"><span>........jobs</span><span>Made for the Valley, with care.</span><span>© 2026</span></footer>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><article class="job-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" type="button" aria-label="Close job details">×</button><div id="modalContent"></div></article></div>
+  <div class="modal-backdrop" id="accountBackdrop" hidden><article class="job-modal feature-modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle"><button class="modal-close" data-close-feature type="button" aria-label="Close account dialog">×</button><div class="feature-kicker">Your Seto profile</div><h2 id="accountTitle">Get better matches.</h2><p class="feature-lead">Save roles, receive alerts and let Seto explain why a job fits your direction.</p><form id="accountForm" class="feature-form"><label>Name<input id="profileName" required placeholder="Your name"></label><label>Email<input id="profileEmail" type="email" required placeholder="you@example.com"></label><label>Skills and interests<input id="profileSkills" required placeholder="e.g. React, finance, teaching"></label><label>Experience level<select id="profileExperience"><option>Entry level</option><option>Mid level</option><option>Senior</option><option>Leadership</option></select></label><button class="apply-button" type="submit">Create profile <span>→</span></button></form><p class="privacy-note">Demo mode stores this profile only in this browser.</p></article></div>
+  <div class="modal-backdrop" id="alertsBackdrop" hidden><article class="job-modal feature-modal" role="dialog" aria-modal="true" aria-labelledby="alertsTitle"><button class="modal-close" data-close-feature type="button" aria-label="Close alerts dialog">×</button><div class="feature-kicker">Job alerts</div><h2 id="alertsTitle">Let good roles find you.</h2><p class="feature-lead">Choose what matters and we will prepare your alert preferences for the future email service.</p><form id="alertsForm" class="feature-form"><label>Alert email<input id="alertEmail" type="email" required placeholder="you@example.com"></label><label>What are you looking for?<input id="alertKeywords" required placeholder="e.g. product, software, NGO"></label><label>Preferred location<select id="alertLocation"><option>All Kathmandu Valley</option><option>Kathmandu</option><option>Lalitpur</option><option>Bhaktapur</option><option>Remote</option></select></label><label>Frequency<select id="alertFrequency"><option>Every 12 hours</option><option>Daily</option><option>Weekly</option></select></label><button class="apply-button" type="submit">Save alert <span>→</span></button></form><p class="privacy-note" id="alertStatus">Email delivery will be connected to the ASP.NET notification service.</p></article></div>
+  <script src="app.js"></script>
+</body>
+</html>
