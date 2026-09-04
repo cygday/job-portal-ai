@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Post an opportunity on the Kathmandu Valley job board.">
+  <title>Post a job | Kathmandu careers, clearly found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="features.css">
+  <link rel="stylesheet" href="post-job.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Jobs home">
+        <span class="brand-mark">S</span>
+        <span>.........<span class="brand-dot">.</span>jobs</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#jobs">Find jobs</a>
+        <a href="index.html#companies">Companies</a>
+        <a href="index.html#resources">Career notes</a>
+      </nav>
+      <div class="header-actions">
+        <a class="account-button" href="index.html#top">Back to jobs</a>
+      </div>
+    </header>
+
+    <main class="post-page">
+      <section class="post-intro" aria-labelledby="post-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> For teams hiring in the Valley</p>
+        <h1 id="post-title">Put the right work<br><em>in reach.</em></h1>
+        <p>Share a thoughtful opportunity with people looking for their next chapter across Kathmandu, Lalitpur and Bhaktapur.</p>
+      </section>
+
+      <section class="post-layout" aria-label="Job posting form">
+        <form class="post-form" id="postForm">
+          <div class="form-heading">
+            <p class="eyebrow muted">Listing details</p>
+            <h2>Tell candidates what matters.</h2>
+          </div>
+          <div class="form-grid">
+            <label class="form-field form-field-wide">Job title<input name="title" required placeholder="e.g. Senior Product Designer"></label>
+            <label class="form-field">Company name<input name="company" required placeholder="e.g. Khalti"></label>
+            <label class="form-field">Location<select name="location" required><option value="">Choose a location</option><option>Kathmandu</option><option>Lalitpur</option><option>Bhaktapur</option><option>Remote</option></select></label>
+            <label class="form-field">Category<select name="category" required><option value="">Choose a category</option><option>Technology</option><option>Design</option><option>Marketing</option><option>Operations</option><option>Finance</option><option>Sales</option><option>Healthcare</option><option>Education</option><option>Customer Support</option><option>Human Resources</option><option>Hospitality</option><option>Engineering</option><option>NGO &amp; Development</option></select></label>
+            <label class="form-field">Employment type<select name="type" required><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Internship</option></select></label>
+            <label class="form-field">Salary range<input name="salaryLabel" required placeholder="e.g. NPR 100–145k"></label>
+            <label class="form-field form-field-wide">Application link<input name="sourceUrl" type="url" required placeholder="https://yourcompany.com/careers/role"></label>
+            <label class="form-field form-field-wide">Role description<textarea name="description" required rows="6" placeholder="Describe the work, the team and what makes this opportunity worth pursuing."></textarea></label>
+          </div>
+          <div class="form-submit-row">
+            <p class="privacy-note">Demo mode saves this draft only in this browser.</p>
+            <button class="apply-button" type="submit">Preview listing <span>→</span></button>
+          </div>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="post-note">
+          <div class="note-number">02</div>
+          <p class="eyebrow muted">A considered listing</p>
+          <h2>Good candidates notice the details.</h2>
+          <p>Be specific about the work, the team and the rhythm of the role. Clear listings make better first conversations.</p>
+          <a class="text-link" href="index.html#jobs">See current roles <span>↗</span></a>
+        </aside>
+      </section>
+    </main>
+
+    <footer><span>........jobs</span><span>Made for the Valley, with care.</span><span>© 2026</span></footer>
+  </div>
+  <script>
+    document.querySelector('#postForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const listing = Object.fromEntries(formData.entries());
+      localStorage.setItem('jobDraft', JSON.stringify({ ...listing, savedAt: new Date().toISOString() }));
+      document.querySelector('#formStatus').textContent = 'Listing draft saved. Employer review and publishing will connect to the next release.';
+      document.querySelector('#formStatus').classList.add('success');
+    });
+  </script>
+</body>
+</html>

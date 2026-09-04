@@ -11,6 +11,7 @@ A browser-runnable Kathmandu Valley job aggregator MVP. The current slice provid
 - Manual and automatic 12-hour feed refresh
 - Local job-seeker profile with explainable match scoring
 - Saved alert preferences for email notification integration
+- Employer post-job page with browser-local draft saving
 - Market-wide category filters: technology, design, marketing, operations, finance, sales, healthcare, education, customer support, HR, hospitality, engineering, and NGO/development
 
 ## Run locally
