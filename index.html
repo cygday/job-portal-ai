@@ -23,6 +23,7 @@
         <a class="active" href="#jobs">Find jobs</a>
         <a href="#companies">Companies</a>
         <a href="#resources">Career notes</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
         <button class="saved-link" id="savedToggle" type="button"><span class="bookmark-icon">☆</span> Saved <span class="saved-count" id="savedCount">0</span></button>
@@ -37,7 +38,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-line"></span> Kathmandu Valley's job board</p>
           <h1 id="hero-title">Find work that<br><em>moves</em> you forward.</h1>
-          <p class="hero-description">A calmer way to discover meaningful work across Kathmandu, Lalitpur and Bhaktapur.</p>
+          <p class="hero-description">A calmer way to discover meaningful work across Kathmandu and cities throughout Nepal.</p>
         </div>
         <div class="hero-orbit" aria-hidden="true">
           <div class="orbit-ring ring-one"></div>
@@ -49,7 +50,7 @@
         </div>
         <form class="search-panel" id="searchForm">
           <label class="search-field search-keyword"><span class="field-icon">⌕</span><span class="visually-hidden">Search roles or companies</span><input id="keywordInput" type="search" placeholder="Role, skill or company" autocomplete="off"></label>
-          <label class="search-field"><span class="field-icon">⌖</span><span class="visually-hidden">Choose a location</span><select id="locationSelect"><option value="">All Kathmandu Valley</option><option value="Kathmandu">Kathmandu</option><option value="Lalitpur">Lalitpur</option><option value="Bhaktapur">Bhaktapur</option><option value="Remote">Remote</option></select></label>
+          <label class="search-field"><span class="field-icon">⌖</span><span class="visually-hidden">Choose a location</span><select id="locationSelect"><option value="Kathmandu">Kathmandu</option><option value="">All Nepal</option><option value="Lalitpur">Lalitpur</option><option value="Bhaktapur">Bhaktapur</option><option value="Pokhara">Pokhara</option><option value="Biratnagar">Biratnagar</option><option value="Bharatpur">Bharatpur</option><option value="Butwal">Butwal</option><option value="Dharan">Dharan</option><option value="Nepalgunj">Nepalgunj</option><option value="Hetauda">Hetauda</option><option value="Janakpur">Janakpur</option><option value="Dhangadhi">Dhangadhi</option><option value="Remote">Remote</option></select></label>
           <button class="search-button" type="submit">Search jobs <span>→</span></button>
         </form>
       </section>
@@ -60,31 +61,16 @@
           <div class="result-meta"><span id="resultCount">0</span> roles <span class="meta-divider">/</span> <span id="refreshStatus">Loading listings...</span> <button class="refresh-button" id="refreshButton" type="button" aria-label="Refresh job listings" title="Refresh job listings">↻</button></div>
         </div>
         <div class="toolbar">
-          <div class="filter-pills" role="group" aria-label="Filter by category">
-            <button class="filter-pill active" data-category="All" type="button">All roles</button>
-            <button class="filter-pill" data-category="Technology" type="button">Technology</button>
-            <button class="filter-pill" data-category="Design" type="button">Design</button>
-            <button class="filter-pill" data-category="Marketing" type="button">Marketing</button>
-            <button class="filter-pill" data-category="Operations" type="button">Operations</button>
-            <button class="filter-pill" data-category="Finance" type="button">Finance</button>
-            <button class="filter-pill" data-category="Sales" type="button">Sales</button>
-            <button class="filter-pill" data-category="Healthcare" type="button">Healthcare</button>
-            <button class="filter-pill" data-category="Education" type="button">Education</button>
-            <button class="filter-pill" data-category="Customer Support" type="button">Customer support</button>
-            <button class="filter-pill" data-category="Human Resources" type="button">Human resources</button>
-            <button class="filter-pill" data-category="Hospitality" type="button">Hospitality</button>
-            <button class="filter-pill" data-category="Engineering" type="button">Engineering</button>
-            <button class="filter-pill" data-category="NGO & Development" type="button">NGO & development</button>
-          </div>
+          <div class="filter-pills" id="categoryFilters" role="group" aria-label="Filter by category"></div>
           <div class="toolbar-actions"><button class="match-button" id="matchButton" type="button">✦ Match me</button><label class="sort-control"><span>Sort by</span><select id="sortSelect"><option value="recent">Most recent</option><option value="salary">Highest salary</option><option value="match">Best match</option></select></label></div>
         </div>
         <div class="jobs-layout">
           <div class="jobs-list" id="jobsList" aria-live="polite"></div>
           <aside class="side-note" id="companies">
             <div class="note-number">01</div>
-            <p class="eyebrow muted">Why Seto?</p>
+            <p class="eyebrow muted">Why ........ jobs?</p>
             <h3>Good work should be easier to find.</h3>
-            <p>We bring the Valley's best opportunities into one considered, useful place. No noise. No maze of tabs.</p>
+            <p>We bring Nepal's best opportunities into one considered, useful place. No noise. No maze of tabs.</p>
             <a href="#resources" class="text-link">Explore career notes <span>↗</span></a>
           </aside>
         </div>
@@ -96,7 +82,7 @@
       </section>
     </main>
 
-    <footer id="resources"><span>........jobs</span><span>Made for the Valley, with care.</span><span>© 2026</span></footer>
+    <footer id="resources"><span>........jobs</span><span>Find work that moves you forward.</span><a href="contact.html">Contact us</a><span>© 2026</span></footer>
   </div>
   <div class="modal-backdrop" id="modalBackdrop" hidden><article class="job-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" type="button" aria-label="Close job details">×</button><div id="modalContent"></div></article></div>
   <div class="modal-backdrop" id="accountBackdrop" hidden><article class="job-modal feature-modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle"><button class="modal-close" data-close-feature type="button" aria-label="Close account dialog">×</button><div class="feature-kicker">Your profile</div><h2 id="accountTitle">Get better matches.</h2><p class="feature-lead">Save roles, receive alerts and get a clear explanation of why a job fits your direction.</p><form id="accountForm" class="feature-form"><label>Name<input id="profileName" required placeholder="Your name"></label><label>Email<input id="profileEmail" type="email" required placeholder="you@example.com"></label><label>Skills and interests<input id="profileSkills" required placeholder="e.g. React, finance, teaching"></label><label>Experience level<select id="profileExperience"><option>Entry level</option><option>Mid level</option><option>Senior</option><option>Leadership</option></select></label><button class="apply-button" type="submit">Create profile <span>→</span></button></form><p class="privacy-note">Demo mode stores this profile only in this browser.</p></article></div>

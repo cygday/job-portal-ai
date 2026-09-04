@@ -1,1 +1,2 @@
 .refresh-button{border:0;background:transparent;color:var(--coral);font-size:19px;line-height:1;padding:0 3px;vertical-align:-2px}.refresh-button:hover{transform:rotate(20deg)}.refresh-button:disabled{opacity:.45;cursor:wait}.apply-button{display:inline-block;text-decoration:none}
+.category-filter{display:inline-flex;align-items:center;gap:3px}.category-filter>a{color:var(--coral);font-size:13px}.filter-pill small{font-size:10px;color:var(--muted)}
